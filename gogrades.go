@@ -1,4 +1,4 @@
-package main
+package gogrades
 
 import (
 	"github.com/andreaswillibaldweber/gogrades/cmd"
