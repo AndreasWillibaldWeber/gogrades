@@ -3,7 +3,7 @@
 Simple Go project to compute grades from achieved points.
 It load student information and points from a csv file and writes the result back to new csv files.
 
-Build:
+Build, run and install:
 
 ```bash
 # Build
@@ -12,6 +12,14 @@ go build -o ./gogrades/main.go
 
 # Run
 go run /gogrades/main.go
+
+# Install
+# (1) Check your go installation: https://go.dev/doc/tutorial/compile-install
+#     (1.1) Add binary path to $PATH e.g. add to the file ~/.profile the command export PATH=$PATH:~/go/bin
+#     (1.2) Set GOBIN path e.g. with the command go env -w GOBIN=~/go/bin
+# (2) Check repository structure: https://go.dev/doc/tutorial/compile-install
+#     (2.1) Check repository for version and release tags. Can be requested by @latest @v1.0.3 suffixes.
+go install github.com/andreaswillibaldweber/gogrades/gogrades
 ```
 
 Run examples:
