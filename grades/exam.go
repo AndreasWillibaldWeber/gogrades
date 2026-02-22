@@ -122,7 +122,7 @@ func (e exam) GradingKeyString() string {
 	)
 }
 
-func (e exam) StudentGradingTable() *utilities.Table {
+func (e exam) GradedStudentTable() *utilities.Table {
 	header := []string{"Student Name", "Mat", "Seat", "Points", "%", "Grade", "Comment"}
 	rows := make([]utilities.TableRow, 0)
 	for _, s := range e.students {
@@ -139,13 +139,13 @@ func (e exam) StudentGradingTable() *utilities.Table {
 	return table
 }
 
-func (e exam) StudentGradingString() string {
+func (e exam) GradedStudentString() string {
 	return fmt.Sprintf(
 		"Exam with %d students:\n%s", e.AmountStudents(),
-		e.StudentGradingTable().FormatTableRight([]int{3, 4}),
+		e.GradedStudentTable().FormatTableRight([]int{3, 4}),
 	)
 }
 
 func (e exam) String() string {
-	return e.GradingKeyString() + "\n" + e.StudentGradingString()
+	return e.GradingKeyString() + "\n" + e.GradedStudentString()
 }

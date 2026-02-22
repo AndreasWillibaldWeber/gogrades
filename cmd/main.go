@@ -33,15 +33,15 @@ func main() {
 	exam.AddStudents(students)
 
 	if flags.GStud() {
-		fmt.Println(exam.StudentGradingString())
+		fmt.Println(exam.GradedStudentString())
 	}
 
 	if flags.SaveCSV() {
 		newpathGradingKey := strings.TrimSuffix(flags.CSVFile(), filepath.Ext(flags.CSVFile())) + "-grading-key.csv"
-		newpathStudenGrading := strings.TrimSuffix(flags.CSVFile(), filepath.Ext(flags.CSVFile())) + "-graded.csv"
+		newpathGradedStudent := strings.TrimSuffix(flags.CSVFile(), filepath.Ext(flags.CSVFile())) + "-graded.csv"
 
 		err1 := exam.GradingKeyTable().ToCSV(newpathGradingKey)
-		err2 := exam.StudentGradingTable().ToCSV(newpathStudenGrading)
+		err2 := exam.GradedStudentTable().ToCSV(newpathGradedStudent)
 		if err1 != nil || err2 != nil {
 			fmt.Printf("Error writing CSV: %v\n", err)
 			return

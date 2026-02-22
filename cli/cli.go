@@ -44,7 +44,7 @@ func (f flags) String() string {
 
 func ParseFlags() flags {
 	gkey := flag.Bool("gkey", false, "show grading key")
-	gstud := flag.Bool("gstud", false, "show student grading")
+	gstud := flag.Bool("gstud", false, "show graded students")
 	pmax := flag.Float64("pmax", 90, "maximum points")
 	ppass := flag.Float64("ppass", 45, "passing points")
 	csvFile := flag.String("csvfile", "", "path to CSV file with student data")
