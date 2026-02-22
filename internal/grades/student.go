@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/andreaswillibaldweber/gogrades/utilities"
+	"github.com/andreaswillibaldweber/gogrades/internal/utilities"
 )
 
 type student struct {

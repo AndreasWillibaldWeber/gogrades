@@ -8,10 +8,10 @@ Build:
 ```bash
 # Build
 mkdir ./build
-go build -o ./main.go
+go build -o ./gogrades/main.go
 
 # Run
-go run /main.go
+go run /gogrades/main.go
 ```
 
 Run examples:

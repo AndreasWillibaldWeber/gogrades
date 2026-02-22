@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/andreaswillibaldweber/gogrades/utilities"
+	"github.com/andreaswillibaldweber/gogrades/internal/utilities"
 )
 
 type exam struct {

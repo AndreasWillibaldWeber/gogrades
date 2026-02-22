@@ -1,16 +1,16 @@
-package cmd
+package main
 
 import (
 	"fmt"
 	"path/filepath"
 	"strings"
 
-	"github.com/andreaswillibaldweber/gogrades/cli"
-	"github.com/andreaswillibaldweber/gogrades/grades"
-	"github.com/andreaswillibaldweber/gogrades/utilities"
+	"github.com/andreaswillibaldweber/gogrades/internal/cli"
+	"github.com/andreaswillibaldweber/gogrades/internal/grades"
+	"github.com/andreaswillibaldweber/gogrades/internal/utilities"
 )
 
-func Run() {
+func main() {
 	flags := cli.ParseFlags()
 	fmt.Printf("Flags>> %s \n\n", flags)
 
