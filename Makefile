@@ -1,6 +1,6 @@
 GO ?= go
 BUILD_FOLDER = "./build"
-MAIN_FILE = "cmd/gogrades/main.go"
+MAIN_FILE = "main.go"
 OUT_FILE = "gogrades"
 
 all: build

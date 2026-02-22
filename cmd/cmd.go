@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 	"github.com/andreaswillibaldweber/gogrades/utilities"
 )
 
-func main() {
+func Run() {
 	flags := cli.ParseFlags()
 	fmt.Printf("Flags>> %s \n\n", flags)
 
