@@ -6,7 +6,11 @@ It load student information and points from a csv file and writes the result bac
 Build:
 
 ```bash
-go build -o gogrades cmd/main.go 
+# Build
+mkdir ./build
+go build -o ./build/gogrades cmd/main.go
+
+# Run
 go run cmd/main.go
 ```
 
