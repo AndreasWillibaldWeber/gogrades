@@ -12,13 +12,15 @@ go build -o ./gogrades/main.go
 
 # Run
 go run /gogrades/main.go
+```
 
-# Install
-# (1) Check your go installation: https://go.dev/doc/tutorial/compile-install
-#     (1.1) Add binary path to $PATH e.g. add to the file ~/.profile the command export PATH=$PATH:~/go/bin
-#     (1.2) Set GOBIN path e.g. with the command go env -w GOBIN=~/go/bin
-# (2) Check repository structure: https://go.dev/doc/tutorial/compile-install
-#     (2.1) Check repository for version and release tags. Can be requested by @latest @v1.0.3 suffixes.
+###### Install
+(1) Check your Go installation: [https://go.dev/doc/tutorial/compile-install](https://go.dev/doc/tutorial/compile-install)
+    (1.1) Add binary path to $PATH e.g. add to the file ~/.profile the command export PATH=$PATH:~/go/bin
+    (1.2) Set GOBIN path, e.g. with the command go env -w GOBIN=~/go/bin
+(2) Check repository structure: [https://go.dev/doc/modules/layout](https://go.dev/doc/modules/layout)
+    (2.1) Check the repository for version and release tags. Can be requested by @latest @v1.0.3 suffixes.
+```bash
 go install github.com/andreaswillibaldweber/gogrades/gogrades
 ```
 
