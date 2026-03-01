@@ -6,6 +6,7 @@ import (
 	"io"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func ReadCSV(filepath string) (*Table, error) {
@@ -40,17 +41,17 @@ func readCSVFromReader(r io.Reader) (*Table, error) {
 			return NewEmptyTable([]string{}), fmt.Errorf("invalid row: expected at least 4 columns (name, matNr, seatNr, points), got %d", len(row))
 		}
 
-		points, err := strconv.ParseFloat(row[3], 64)
+		points, err := strconv.ParseFloat(strings.TrimSpace(row[3]), 64)
 		if err != nil {
 			return NewEmptyTable([]string{}), fmt.Errorf("parse points for %q: %w", row[0], err)
 		}
 
 		comment := ""
 		if len(row) > 4 {
-			comment = row[4]
+			comment = strings.TrimSpace(row[4])
 		}
 
-		table.AddRow(TableRow{row[0], row[1], row[2], points, comment})
+		table.AddRow(TableRow{strings.TrimSpace(row[0]), strings.TrimSpace(row[1]), strings.TrimSpace(row[2]), points, comment})
 	}
 
 	return table, nil
