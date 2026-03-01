@@ -3,6 +3,8 @@
 Simple Go project to compute grades from achieved points.
 It loads student information and points from a CSV file, then writes the results back to new CSV files.
 
+![Fyne.io GUI](https://github.com/andreaswillibaldweber/gogrades/media/gui.png)
+
 Build the command-line tool:
 
 ```bash
