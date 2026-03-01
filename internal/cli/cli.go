@@ -8,6 +8,7 @@ import (
 type flags struct {
 	gstud   bool
 	gkey    bool
+	gui     bool
 	pmax    float64
 	ppass   float64
 	csvFile string
@@ -20,6 +21,10 @@ func (f flags) GStud() bool {
 
 func (f flags) GKey() bool {
 	return f.gkey
+}
+
+func (f flags) GUI() bool {
+	return f.gui
 }
 
 func (f flags) PMax() float64 {
@@ -39,12 +44,13 @@ func (f flags) SaveCSV() bool {
 }
 
 func (f flags) String() string {
-	return fmt.Sprintf("pmax: %v, ppass: %v, csvFile: %s, saveCSV: %t, gkey: %t, gstud: %t", f.pmax, f.ppass, f.csvFile, f.saveCSV, f.gkey, f.gstud)
+	return fmt.Sprintf("pmax: %v, ppass: %v, csvFile: %s, saveCSV: %t, gkey: %t, gstud: %t, gui: %t", f.pmax, f.ppass, f.csvFile, f.saveCSV, f.gkey, f.gstud, f.gui)
 }
 
 func ParseFlags() flags {
 	gkey := flag.Bool("gkey", false, "show grading key")
 	gstud := flag.Bool("gstud", false, "show graded students")
+	gui := flag.Bool("gui", false, "show graphical user interface")
 	pmax := flag.Float64("pmax", 90, "maximum points")
 	ppass := flag.Float64("ppass", 45, "passing points")
 	csvFile := flag.String("csvfile", "", "path to CSV file with student data")
@@ -55,6 +61,7 @@ func ParseFlags() flags {
 	return flags{
 		gstud:   *gstud,
 		gkey:    *gkey,
+		gui:     *gui,
 		pmax:    *pmax,
 		ppass:   *ppass,
 		csvFile: *csvFile,

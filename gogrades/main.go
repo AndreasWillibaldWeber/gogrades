@@ -7,6 +7,7 @@ import (
 
 	"github.com/andreaswillibaldweber/gogrades/internal/cli"
 	"github.com/andreaswillibaldweber/gogrades/internal/grades"
+	"github.com/andreaswillibaldweber/gogrades/internal/gui"
 	"github.com/andreaswillibaldweber/gogrades/internal/utilities"
 )
 
@@ -18,6 +19,19 @@ func main() {
 
 	if flags.GKey() {
 		fmt.Println(exam.GradingKeyString())
+	}
+
+	if flags.GUI() {
+		err := gui.ShowExamTables(flags.PMax(), flags.PPass(), flags.CSVFile())
+		if err != nil {
+			fmt.Printf("Error showing GUI: %v\n", err)
+			return
+		}
+		return
+	}
+	if strings.TrimSpace(flags.CSVFile()) == "" {
+		fmt.Println("Error: --csvfile is required when not using --gui.")
+		return
 	}
 
 	table, err := utilities.NewTableFromCSV(flags.CSVFile())

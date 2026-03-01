@@ -38,6 +38,7 @@ Run examples:
 Flags:
 - `--gkey` show grading key
 - `--gstud` show graded students
+- `--gui` show GUI with graded students and grading key view
 - `--pmax` maximum points (default 90)
 - `--ppass` passing points (default 45)
 - `--csvfile` path to CSV file with student data
