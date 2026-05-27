@@ -5,6 +5,11 @@ It loads student information and points from a CSV file, then writes the results
 
 ![Fyne.io GUI](media/gui.png)
 
+Make sure you have installed `GCC`, `libgl1-mesa-dev` and `xorg-dev` to compile the Fyne.io UI:
+```bash
+sudo apt-get install gcc libgl1-mesa-dev xorg-dev
+```
+
 Build the command-line tool:
 
 ```bash
